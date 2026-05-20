@@ -1,0 +1,11 @@
+proceso = {
+    "id":          "P1",                        
+    "llegada":     2,                           # segundo que llega (para CPU)
+    "prioridad":   3,                           # prioridad (para CPU) [si haces por PR]
+    "rafaga":      8,                           # tiempo en CPU (para CPU)
+    "referencias": [0, 1, 2, 0, 3, 1, 2],      # accesos a páginas (para memoria)
+    "cilindros":   [45, 132, 67, 90, 23],       # pistas del disco (para disco)
+}
+
+
+
