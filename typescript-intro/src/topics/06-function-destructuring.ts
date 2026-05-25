@@ -1,20 +1,20 @@
-interface Product {
+export interface Product {
     description: string;
     price: number;
 }
 
-const phone: Product = {
-    description: 'Nokia A1',
-    price: 150
-}
+// const phone: Product = {
+//     description: 'Nokia A1',
+//     price: 150
+// }
 
-const tablet: Product = {
-    description: 'iPad Air',
-    price: 250.0
-}
+// const tablet: Product = {
+//     description: 'iPad Air',
+//     price: 250.0
+// }
 
 //
-interface TaxCalculationOptions { 
+export interface TaxCalculationOptions { 
     tax: number;
     products: Product[];
 }
@@ -32,7 +32,7 @@ interface TaxCalculationOptions {
 
 //con desestructuración
 //function taxCalculation({tax, products}: TaxCalculationOptions): number[] {
-function taxCalculation(options: TaxCalculationOptions): [number, number] {
+export function taxCalculation(options: TaxCalculationOptions): [number, number] {
     const {tax, products} = options;
 
     let total = 0;
@@ -45,8 +45,8 @@ function taxCalculation(options: TaxCalculationOptions): [number, number] {
 
 
 //carrito que compra un telefono y una tablet
-const shoppingCart = [phone, tablet];
-const tax = 0.15;
+//const shoppingCart = [phone, tablet];
+//const tax = 0.15;
 
 
 
@@ -61,13 +61,11 @@ const tax = 0.15;
 // console.log('Tax:', result[1]);
 
 //DESESTRUCTURANDO
-const [total, taxAmount] = taxCalculation({
-        products: shoppingCart,
-        tax,
-});
-console.log('Total:', total);
-console.log('Tax:', taxAmount);
+// const [total, taxAmount] = taxCalculation({
+//         products: shoppingCart,
+//         tax,
+// });
+// console.log('Total:', total);
+// console.log('Tax:', taxAmount);
 
 
-
-export {};
