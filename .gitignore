@@ -1,0 +1,6 @@
+# Local repository ignores
+p.txt
+.DS_Store
+
+# Add other ignores for convenience
+node_modules/
