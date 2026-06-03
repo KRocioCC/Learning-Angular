@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #6fe3fd;
+  padding: 10px;
+  color: white;
+}
+
+nav a {
+
+  color: white;
+  text-decoration: none;
+}
+
+nav a.active {
+  color:chocolate;
+
+}
