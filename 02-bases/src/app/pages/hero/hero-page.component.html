@@ -8,16 +8,18 @@
   <dd>{{ age() }}</dd>
 
   <td>Método:</td>
-  <dd>{{ getHeroDescription() }}</dd>
+  <dd>{{ heroDescription() }}</dd>
 
   <td>Capitalizado:</td>
-  <dd> {{ name().toUpperCase() }} </dd>
+  <!-- <dd> {{ capitalizedName() }} </dd> -->
+   <dd> {{ name() | uppercase }} </dd>
 </dl>
 
 <button (click)="changeHero()" class="btn btn-primary mx-2">
   Cambiar nombre
 </button>
 
+<!-- este boton reacciona al evento de clic -->
 <button (click)="changeAge()" class="btn btn-primary mx-2">Cambiar edad</button>
 
 <button (click)="resetForm()" class="btn btn-primary mx-2">Reset</button>
