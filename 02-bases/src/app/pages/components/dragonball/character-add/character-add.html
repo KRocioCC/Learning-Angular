@@ -1,0 +1,27 @@
+<h3>AGREGAR PERSONAJE: {{name() }}</h3>
+
+    <!-- los eventos sirven para capturar acciones directas del usuario en el HTML -->
+    <!-- el evento input se dispara cada vez que el valor del input cambia -->
+    <!-- el evento change se dispara cuando el input pierde el foco -->
+    <input
+      type="text"
+      class="form-control mb-2"
+      placeholder="Nombre"
+      [value]="name()"
+      (change)="name.set(txtName.value)"
+      (input)="name.set(txtName.value)"
+      #txtName>
+
+    <hr>
+    <h3>AGREGAR PODER: {{power() }}</h3>
+    <input
+      type="number"
+      class="form-control mb-2"
+      placeholder="Poder del personaje"
+      [value]="power()"
+      (change)="power.set(txtPower.valueAsNumber)"
+      (input)="power.set(+txtPower.value)"
+      #txtPower>
+
+
+  <button (click)="addCharacter()" type="button" class="mt-2 btn btn-primary" >Agregar Personaje</button>
