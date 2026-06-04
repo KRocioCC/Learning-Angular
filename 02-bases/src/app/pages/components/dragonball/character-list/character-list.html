@@ -1,0 +1,21 @@
+<h3>{{ listName() }}</h3>
+    <ul>
+
+      <!-- podemos acceder a name solo dentro de @for -->
+      @for(character of characters(); track character.id; let idx = $index){
+
+      @if(character.power > 5000){
+      <li>
+
+        <span>{{ idx + 1 }}. {{ character.name }}</span>
+        <strong [class.text-danger]="character.power > 9000">{{ character.power }}</strong>
+        <!-- <strong
+              [ngClass]="powerClasses()">{{ character.power }}</strong> -->
+      </li>
+      } @else {
+      <strong> aqui no hay nadie </strong>
+      }
+
+      }
+
+    </ul>
