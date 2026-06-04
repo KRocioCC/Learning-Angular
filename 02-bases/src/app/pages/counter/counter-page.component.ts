@@ -11,8 +11,8 @@ export class CounterPageComponent {
 
   constructor(){
     setInterval(() => {
-      this.increaseByOne(1);
-      console.log('Tick');
+      //this.increaseByOne(1);
+      //console.log('Tick');
     }, 1000);
   }
 
