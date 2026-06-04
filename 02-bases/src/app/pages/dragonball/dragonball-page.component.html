@@ -1,0 +1,34 @@
+<h1>
+  Dragonball Page
+</h1>
+
+<hr>
+
+<section class = "row">
+  <div class = "col-12 col-sm-6">
+    <h3>AGREGAR PERSONAJE</h3>
+  <input type="text" class="form-control mb-2" placeholder="Nombre del personaje">
+  <input type="number" class="form-control mb-2" placeholder="Poder del personaje">
+  </div>
+
+  <button class="mt-2 btn btn-primary">Agregar Personaje</button>
+
+  <div class="col-12 col-sm-6">
+    <h3>LISTA DE PERSONAJES</h3>
+    <ul>
+      <!-- podemos acceder a name solo dentro de @for -->
+      @for(character of characters(); track character.id; let idx = $index){
+        <li>
+
+        <span>{{ idx + 1 }}. {{ character.name }}</span>
+        <strong [class.text-danger]="character.power > 9000">{{ character.power }}</strong>
+          <!-- <strong
+            [ngClass]="powerClasses()">{{ character.power }}</strong> -->
+        </li>
+      }
+
+    </ul>
+  </div>
+
+
+</section>
