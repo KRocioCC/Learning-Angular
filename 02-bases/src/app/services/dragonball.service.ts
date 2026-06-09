@@ -1,6 +1,11 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { Character } from '../interfaces/characters.interface';
 
+function loadFromLocalStorage(): Character[] {
+  const characters = localStorage.getItem('characters');
+  return characters ? JSON.parse(characters) : [];
+
+}
 
 //el Injectable convierte mi clase en un servicio
 @Injectable({
@@ -11,11 +16,11 @@ import { Character } from '../interfaces/characters.interface';
 //  relacionada con los personajes y su poder
 export class DragonballService {
 
-    characters = signal<Character[]>([
-    {id: 2, name: 'Vegeta', power: 8000},
-    {id: 3, name: 'Gohan', power: 3000},
-  ]);
+  characters = signal<Character[]>(loadFromLocalStorage());
 
+  saveToLocalStorage = effect(() => {
+    localStorage.setItem('characters', JSON.stringify(this.characters()));
+  });
 
   addCharacter(character: Character) {
     this.characters.update(
