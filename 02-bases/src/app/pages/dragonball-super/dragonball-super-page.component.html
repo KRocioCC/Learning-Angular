@@ -6,16 +6,16 @@
 
 <section class="row">
   <div class="col-12 col-sm-6">
-    <dragonball-character-add/>
+    <dragonball-character-add (newCharacter)="dragonballService.addCharacter($event)"></dragonball-character-add>
+  </div>
 
   <div class="col-12 col-sm-6">
 
     <dragonball-character-list
-      listName = "Listado de personajes fuertes"
-      [characters]="characters()" />
+      listName="Listado de personajes fuertes"
+      [characters]="dragonballService.characters()" />
 
   </div>
-   </div>
 
 
 </section>
