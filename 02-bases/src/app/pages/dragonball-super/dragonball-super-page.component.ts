@@ -22,19 +22,12 @@ export class DragonballSuperPageComponent {
     {id: 3, name: 'Gohan', power: 3000},
   ]);
 
-  addCharacter(): void {
-    if( this.power() <= 0 || !this.name() || !this.name() ){
-      return;
-    }
-    const newCharacter: Character = {
-      id: 1000,
-      name: this.name(),
-      power: this.power(),
-    }
-    //queremos actualizar el valor de la señal
-    // this.characters.update((list) => [...list, newCharacter]);
-    console.log({newCharacter});
-    this.resetFields();
+
+  addCharacter(character: Character) {
+    this.characters.update(
+      (list) => [...list, character]
+    );
+
   }
 
   resetFields(){
